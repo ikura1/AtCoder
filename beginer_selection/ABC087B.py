@@ -1,16 +1,24 @@
 import sys
-from itertools import product
 
 input = sys.stdin.readline
 
 
 def main():
-    a = [i * 500 for i in range(int(input()) + 1)] or [0]
-    b = [i * 100 for i in range(int(input()) + 1)] or [0]
-    c = [i * 50 for i in range(int(input()) + 1)] or [0]
-    x = int(input())
-    all_ = [[i, j, k] for i, j, k in product(a, b, c)]
-    print(len([i for i in all_ if sum(i) == x]))
+    # たしかに、rangeで回したらいいよね
+    a, b, c, x = [int(input()) for _ in range(4)]
+    # 50単位だから50で割るの頭いい
+    x //= 50
+    ans = 0
+    for i in range(a + 1):
+        if 10 * i > x:
+            break
+        rem = x - 10 * i
+        for j in range(b + 1):
+            if 2 * j > rem:
+                break
+            # 50と100は丁度か50で埋めれるから、+1か
+            if rem - 2 * j <= c:
+                ans += 1
 
 
 if __name__ == "__main__":
