@@ -4,8 +4,8 @@ input = sys.stdin.readline
 
 
 def main():
-    s = input()
-    print(s.count("1"))
+    N = int(input())
+    print("YES" if N % 3 == 0 else "NO")
 
 
 if __name__ == "__main__":

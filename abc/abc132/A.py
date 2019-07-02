@@ -4,8 +4,7 @@ input = sys.stdin.readline
 
 
 def main():
-    a, b = [int(i) for i in input().split()]
-    print("Odd" if (a * b) % 2 else "Even")
+    print("Yes" if len(set(input().strip())) == 2 else "No")
 
 
 if __name__ == "__main__":
