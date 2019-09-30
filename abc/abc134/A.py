@@ -1,0 +1,12 @@
+import sys
+
+input = sys.stdin.readline
+
+
+def main():
+    r = int(input())
+    print(3 * (r ** 2))
+
+
+if __name__ == "__main__":
+    main()
